@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaezelle's</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>All About Jaezelle</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Personal Information</a></li>
+                    <li><a href="#about">Preferences</a></li>
+                    <li><a href="#contact">Message</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h2>Welcome to my Self-made Webpage.</h2>
+        <div class="about-content">
+            <img src="about.jpg" alt="Logo">
+            <h4>I am Jaezelle.</h4>
+            <p>This webpage serves as a digital reflection of who I am, a place where authenticity reigns supreme, and where I can express myself freely without constraints. Here, you'll find a glimpse into my world, from my hobbies and projects to my reflections on life's journey. Join me as we explore the depths of our passions, embrace our uniqueness, and celebrate the beauty of human connection in this ever-evolving digital landscape.</p>
+            </div>
+
+        <section id="home">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Personal Information</h2>
+                <h3>Nicknames are Jaezelle, Jae, Jaz, Jaeden, Raen, Lyth</h3>
+                <h3>Only Child</h3>
+                <h3>Birthyear was 200.</h3>
+                <h3>Lives in Quezon City</h3>
+                <h3>Have 2 dogs, named Leo and Lea</h3>
+                <h3>Strict Person</h3>
+                <h3>Taking BS in Information Technology at PUPQC</h3>
+                <h3>Favorite Color is Yellow also love the combination of yellow and black</h3>
+                <p>I have had amazing extracurricular activities since I was a kid. I joined several activities like Girl Scouts for 7 years, was a reservist, played Badminton, and was a member of the School Drum and Lyre in my elementary years. Also, I dance when it's required. I have a passion for playing Badminton. Last year, I joined the United Shuttlers Badminton Club (USBC). Having my own world means I am more comfortable in my own company, although I love being accompanied too, I prefer being alone. I don't have a long social battery to interact and socialize. Additionally, I have great experience and knowledge about businesses and handling money. I enjoy budgeting a lot. I am a short-tempered person, sometimes patient, but mostly not.</p>
+                <p>Recently, I discovered my interest in learning more about making a website/webpage and digital arts. In fact, I loved arts and crafts when I was still a child, but suddenly lost interest. Doing digital arts is now one of my coping mechanisms. Before, I only binged on watching, sleeping, and imagining things that are not good for my mental health. Now, I've found a healthier outlet for my creativity and energy.</p>
+                <p>Lastly, my hobbies are reading English stories and watching educational videos. Having a high level of curiosity is a good thing. It drives me to explore new topics and gain knowledge. Reading allows me to immerse myself in different worlds, while educational videos satisfy my thirst for learning. I believe that learning should be a lifelong journey, and I'm always seeking new ways to expand my horizons.</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="row">
+            <div class="col-md-6 order-md-2">
+                <h2>Preferences</h2>
+                <h3>Life</h3>
+                <p>I prefer low-key and private environments. They are more peaceful and allow me to focus on my thoughts. I find solace in the quiet and appreciate the simplicity of a calm atmosphere. Additionally, being in such settings helps me recharge and regain my energy.  I value wisdom, experience, and the ability to engage in meaningful conversations. Mature individuals often offer valuable perspectives and insights that contribute to personal growth. I find their company both enriching and inspiring.</p> <br>
+                <h3>Fashion Fits</h3>
+                <p>Simple yet Cool is my style. I am obsessed with Polo Shirts, Drifit Clothes, Baggy Jeans, and 4-Pocket Shorts. These pieces make up the core of my wardrobe, offering both comfort and style. When it comes to jewelry, I have a preference for silver accessories. In fact, my go-to jewelry and watch brand is Unisilver. I find myself drawn to rings and watches, feeling incomplete if I leave the house without them. They add a touch of elegance and personality to my everyday look. My wardrobe primarily consists of neutral colors, which I believe perfectly complement silver accessories. Shades like black, white, grey, and navy dominate my closet. These colors not only create a cohesive and versatile wardrobe but also serve as a backdrop for my silver jewelry to shine. The simplicity of my style allows me to mix and match effortlessly while still exuding a cool and put-together vibe.</p> <br>
+                <h3>Pet Peeves</h3>
+                <p>I find myself easily bothered by certain behaviors and environments that disrupt my sense of peace. Loud Chewing, Bad Manners, Interrupting, Slow walkers, Too much noice, Being Late, Cluttered Spaces, One-upmanship, Lack of Empathy, Excessive bragging, Passive-aggressive behavior, Lack of personal responsibility, Overly dramatic reactions, Emotional manipulation, and Insensitive jokes.</p>
+                Note: I strive to create a space around me that promotes mutual respect, empathy, and a sense of calm.
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="row">
+            <div class="col-md-6">
+                <h2>Message for Jaezelle</h2> <br>
+                <p>Please feel free to leave a message if you would like. However, before you click send, kindly consider the content of your message and ensure it aligns with respectful and thoughtful communication. Let's ensure our communication is mindful and respectful. Thank you!</p> <br><br>
+            </div>
+
+                <form id="contact-form">
+                    <label for="name">Name:</label><br><br>
+                    <input type="text" id="name" name="name" required><br><br>
+                
+                    <label for="message">Message:</label><br><br>
+                    <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                
+                    <input type="submit" value="Send">
+                  </form>
+            
+             <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+              <script>
+                (function() {
+                  emailjs.init('F8HIRYXkstqDzVPuH'); // Replace with your EmailJS user ID
+            
+                  document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+            
+                    // This is a basic example. You should add validation and error handling here.
+            
+                    const form = this;
+                    const name = form.querySelector('#name').value;
+                    const message = form.querySelector('#message').value;
+            
+                    const templateParams = {
+                      from_name: name,
+                      message: message
+                    };
+            
+                    emailjs.send('pijeyrd120704', 'template_p914shf', templateParams)
+                      .then(function(response) {
+                        alert('Message sent successfully!');
+                        form.reset();
+                      }, function(error) {
+                        console.error('Failed to send message. Error:', error);
+                      });
+                  });
+                })();
+              </script>
+        </section>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

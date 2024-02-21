@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Author</title>
+    <style>
+       body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url(bg.jpg) no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .container {
+            width: 300px;
+            background: transparent;
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(24, 24, 4, 0.007); /* Yellow glow */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.7);
+        }
+
+        .logo {
+            display: block;
+            margin: auto;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            width: 100px; /* Adjust the width as needed */
+        }
+
+        h2 {
+            color: goldenrod;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .field {
+            margin-bottom: 20px;
+        }
+
+        .field label {
+            font-size: 18px;
+            color: white;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .field input {
+            width: calc(107% - 20px);
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 20%;
+            padding: 10px;
+            font-size: 14px;
+            background-color: goldenrod;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: gray;
+            box-shadow: 0 0 20px rgba(255, 255, 0, 0.7); /* Intensify yellow glow on hover */
+        }
+        p {
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="logo.jpg" alt="Logo" class="logo">
+        <h2>WELCOME!</h2>
+        <p>Just wanna let you know, I made this webpage for you to know me more.</p>
+        <form id="form">
+            <div class="field">
+                <label for="from_name">What is your name?</label>
+                <input type="text" name="from_name" id="from_name" required>
+            </div>
+            <input type="submit" id="button" value="Done">
+        </form>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+        <script type="text/javascript">
+            emailjs.init('F8HIRYXkstqDzVPuH')
+        </script>
+
+        <script>
+            const btn = document.getElementById('button');
+
+            document.getElementById('form')
+                .addEventListener('submit', function (event) {
+                    event.preventDefault();
+
+                    btn.value = '.....';
+
+                    const serviceID = 'pijeyrd120704';
+                    const templateID = 'template_zb1xq42';
+
+                    emailjs.sendForm(serviceID, templateID, this)
+                        .then(() => {
+                            btn.value = 'Done';
+                            alert('You are now signed in! Welcome to Jaezelle Personal Webpage!');
+                            // Redirect to another HTML page after successful login
+                            window.location.href = "homepage.html";
+                        }, (err) => {
+                            btn.value = 'Done';
+                            alert(JSON.stringify(err));
+                        });
+                });
+        </script>
+    </div>
+</body>
+</html>
